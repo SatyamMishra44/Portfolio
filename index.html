@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satyam Kumar Mishra - Software Developer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header with Navigation and Dark Mode Toggle -->
+    <header>
+      <!-- Navigation Links and Theme Button (Right Side) -->
+      <nav>
+        <ul>
+          <li class="theme-toggle">
+            <button id="theme-toggle-btn">🌙</button>
+          </li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section with Profile Photo on the Right -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Hi, Myself</h1>
+        <h2>Satyam Kumar Mishra</h2>
+        <p>And I'm a Software Developer!</p>
+        <p>
+          Computer Science engineer who develops websites and Android
+          applications, enthusiastic about Java web-based applications using
+          Java and Spring Boot.
+        </p>
+        <div class="hero-buttons">
+          <a href="path/to/your/cv.pdf" download class="btn">Download CV</a>
+          <div class="social-buttons">
+            <a
+              href="https://www.linkedin.com/in/satyam-mishra-140688298/"
+              target="_blank"
+              class="social-btn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/SatyamMishra44"
+              target="_blank"
+              class="social-btn"
+              ><i class="fab fa-github"></i
+            ></a>
+            <!-- <a href="https://facebook.com" target="_blank" class="social-btn"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a> -->
+          </div>
+        </div>
+      </div>
+      <div class="profile-photo">
+        <img src="profile.jpg" alt="Satyam Mishra" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-container">
+        <!-- Profile Photo and Details on the Left -->
+        <div class="about-photo">
+          <img src="profile.jpg" alt="Mark Junior" />
+          <div class="about-details">
+            <h3>Satyam Kumar Mishra</h3>
+            <p><strong>Role:</strong>Software Developer</p>
+            <p><strong>Course:</strong> B-Tech in Computer Engineering</p>
+            <p><strong>Address:</strong>Balara-03, Sarlahi, Nepal</p>
+          </div>
+          <!-- Skills Section -->
+        </div>
+        <!-- About Me Text on the Right -->
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I am a third-year B.Tech student in Computer Science and Engineering
+            with a strong passion for software development, backend engineering,
+            and system design. I have expertise in Java, Python, and C, along
+            with experience in building scalable web applications using Spring
+            Boot and SQL for efficient database management. My interests include
+            backend development, RESTful APIs and containerization with Docker.
+            I am always eager to take on challenging projects, improve my
+            technical skills, and contribute to impactful solutions that drive
+            innovation.
+          </p>
+        </div>
+      </div>
+      <div class="skills">
+        <h4>Skills</h4>
+        <div class="skill-item">
+          <span>JAVA</span>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>PYTHON</span>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 40%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>C</span>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>SQL</span>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Backend with SpringBoot</span>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 65%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <div class="service-slider">
+            <div class="service-item">
+                <img src="web development.jpg" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Building responsive and dynamic websites using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="service-item">
+                <img src="Android App.png" alt="Android App Development">
+                <h3>Android App Developer</h3>
+                <p>Designing intuitive and user-friendly interfaces for web applications.</p>
+            </div>
+            <div class="service-item">
+                <img src="backend.webp" alt="Backend Development">
+                <h3>Backend Optimization</h3>
+                <p>Optimizing frontend performance for faster load times and better user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio</h2>
+      <p>Here are some of my latest projects.</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="project1.jpg" alt="Project 1" />
+          <h3>Online Art Gallery</h3>
+          <p>An immersive online art gallery showcasing stunning digital and traditional artworks for art enthusiasts and collectors.</p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="portfolio-item">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Project Two</h3>
+          <p>A scalable employee management system.</p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="portfolio-item">
+          <img src="project3.jpg" alt="Project 3" />
+          <h3>Project Three</h3>
+          <p>Real-time data analytics dashboard using Hadoop.</p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="blogs">
+      <h2>Blogs</h2>
+      <div class="blogs-content">
+        <p>Keep in touch, blogs are about to come! 🚀</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form
+        id="contact-form"
+        action="mailto:your-email@example.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 Satyam Mishra. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
