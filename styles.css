@@ -233,7 +233,7 @@ nav ul li a:hover {
 
 .skill-level {
     height: 10px;
-    background-color: #4067b7;;
+    background-color: #4067b7;
     border-radius: 5px;
 }
 
@@ -253,14 +253,15 @@ nav ul li a:hover {
 }
 
 /* Services Section */
-.services{
+.services {
     text-align: center;
 }
+
 .service-slider {
     width: 400%;
     max-width: 600px;
     margin: auto;
-    overflow:visible;
+    overflow: visible;
     position: relative;
     border-radius: 10px;
 }
@@ -284,13 +285,12 @@ nav ul li a:hover {
 .service-item.active {
     display: block;
 }
-/* .portfolio:hover{
-    float:inline-start;
-    
-} */
-.portfolio{
-    text-align:  center;
+
+/* Portfolio */
+.portfolio {
+    text-align: center;
 }
+
 .portfolio-grid {
     display: flex;
     justify-content: center;
@@ -306,8 +306,8 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     text-align: center;
-    
 }
+
 .portfolio-item:hover {
     transform: rotateX(360deg) rotateY(360deg) scale(1.15);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
@@ -406,4 +406,121 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* For tablets and smaller screens */
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-photo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skills {
+        margin: 20px;
+    }
+
+    .portfolio-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .portfolio-item {
+        max-width: 90%;
+    }
+
+    .portfolio-scroll {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile screens */
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .social-btn {
+        font-size: 3em;
+    }
+
+    .about-text h2 {
+        font-size: 2em;
+    }
+
+    .about-text p {
+        font-size: 1em;
+    }
+
+    .service-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .portfolio-item {
+        max-width: 100%;
+    }
+
+    .portfolio-item h3 {
+        font-size: 1.2em;
+    }
+
+    .portfolio-item p {
+        font-size: 1em;
+    }
+
+    .scroll-btn {
+        padding: 8px 15px;
+    }
 }
