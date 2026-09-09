@@ -1,231 +1,756 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Font Awesome for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Satyam Kumar Mishra - Software Developer</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Header with Navigation and Dark Mode Toggle -->
-    <header>
-      <!-- Navigation Links and Theme Button (Right Side) -->
-      <nav>
-        <ul>
-          <li class="theme-toggle">
-            <button id="theme-toggle-btn">🌙</button>
-          </li>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#blogs">Blogs</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <!-- Hero Section with Profile Photo on the Right -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Hi, Myself</h1>
-        <h2>Satyam Kumar Mishra</h2>
-        <p>And I'm a Software Developer!</p>
-        <p>
-          Computer Science engineer who develops websites and Android
-          applications, enthusiastic about Java web-based applications using
-          Java and Spring Boot.
-        </p>
-        <div class="hero-buttons">
-          <a href="path/to/your/cv.pdf" download class="btn">Download CV</a>
-          <div class="social-buttons">
-            <a
-              href="https://www.linkedin.com/in/satyam-mishra-140688298/"
-              target="_blank"
-              class="social-btn"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a
-              href="https://github.com/SatyamMishra44"
-              target="_blank"
-              class="social-btn"
-              ><i class="fab fa-github"></i
-            ></a>
-            <!-- <a href="https://facebook.com" target="_blank" class="social-btn"><i class="fab fa-facebook"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satyam Kumar Mishra | Software Developer & Backend Engineer</title>
+  <meta name="description"
+    content="Satyam Kumar Mishra — B.Tech Computer Science student, Backend Developer specializing in Java, Spring Boot, React, and system design. View my projects and get in touch." />
+  <meta property="og:title" content="Satyam Kumar Mishra | Software Developer" />
+  <meta property="og:description"
+    content="Backend Developer & Software Engineer specializing in Java, Spring Boot, and scalable web applications." />
+  <meta property="og:type" content="website" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    // ⚠️ Replace with your actual EmailJS Public Key
+    (function () { emailjs.init({ publicKey: 'LrAP3OB0i5cJyRlJW' }); })();
+  </script>
+  <!-- Devicons for tech logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Particle Canvas Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">👋 Hello, World! I'm</p>
+      <h1 class="hero-name">Satyam Kumar<br /><span class="name-accent">Mishra</span></h1>
+      <div class="hero-typing">
+        <span class="typing-prefix">I'm a </span>
+        <span class="typing-text" id="typing-text"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+      <p class="hero-desc">
+        A passionate <strong>Backend Engineer</strong> who crafts scalable web applications
+        with Java & Spring Boot — turning complex problems into elegant, efficient solutions.
+      </p>
+      <div class="hero-cta">
+        <a href="CV.pdf" download class="btn-primary" id="download-cv-btn">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a href="#portfolio" class="btn-outline" id="view-projects-btn">
+          <i class="fas fa-rocket"></i> View Projects
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/satyam-mishra-140688298/" target="_blank" class="social-icon"
+          id="linkedin-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/SatyamMishra44" target="_blank" class="social-icon" id="github-link"
+          aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:satyammishra0323@gmail.com" class="social-icon" id="email-link" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrapper">
+        <div class="hero-img-glow"></div>
+        <img src="profile.jpg" alt="Satyam Kumar Mishra" class="hero-img" />
+        <div class="hero-img-ring"></div>
+      </div>
+      <div class="floating-badge badge-1">
+        <i class="devicon-java-plain colored"></i>
+        <span>Java</span>
+      </div>
+      <div class="floating-badge badge-2">
+        <i class="devicon-spring-plain colored"></i>
+        <span>Spring Boot</span>
+      </div>
+      <div class="floating-badge badge-3">
+        <i class="devicon-react-original colored"></i>
+        <span>React</span>
+      </div>
+      <div class="floating-badge badge-4">
+        <i class="fas fa-brain" style="color: #a855f7;"></i>
+        <span>AI/ML</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about section-padding">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">// about me</span>
+        <h2 class="section-title">Who Am I?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-img-col" data-aos>
+          <div class="about-img-container">
+            <img src="profile1.jpg" alt="Satyam Kumar Mishra" class="about-img" />
+            <div class="about-img-border"></div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">10+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">3rd</span>
+              <span class="stat-label">Year B.Tech</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Tech Stacks</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="profile-photo">
-        <img src="profile.jpg" alt="Satyam Mishra" />
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="about-container">
-        <!-- Profile Photo and Details on the Left -->
-        <div class="about-photo">
-          <img src="profile.jpg" alt="Mark Junior" />
-          <div class="about-details">
-            <h3>Satyam Kumar Mishra</h3>
-            <p><strong>Role:</strong>Software Developer</p>
-            <p><strong>Course:</strong> B-Tech in Computer Engineering</p>
-            <p><strong>Address:</strong>Balara-03, Sarlahi, Nepal</p>
-          </div>
-          <!-- Skills Section -->
-        </div>
-        <!-- About Me Text on the Right -->
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>
-            I am a third-year B.Tech student in Computer Science and Engineering
-            with a strong passion for software development, backend engineering,
-            and system design. I have expertise in Java, Python, and C, along
-            with experience in building scalable web applications using Spring
-            Boot and SQL for efficient database management. My interests include
-            backend development, RESTful APIs and containerization with Docker.
-            I am always eager to take on challenging projects, improve my
-            technical skills, and contribute to impactful solutions that drive
-            innovation.
+        <div class="about-text-col" data-aos>
+          <h3 class="about-subtitle">Backend Developer & Software Engineer</h3>
+          <p class="about-para">
+            I'm a third-year <strong>B.Tech Computer Science & Engineering</strong> student with
+            a deep passion for backend development, system design, and building scalable solutions
+            that make a real-world impact.
           </p>
-        </div>
-      </div>
-      <div class="skills">
-        <h4>Skills</h4>
-        <div class="skill-item">
-          <span>JAVA</span>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 85%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <span>PYTHON</span>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 40%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <span>C</span>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 60%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <span>SQL</span>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 70%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <span>Backend with SpringBoot</span>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 65%"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Services</h2>
-        <div class="service-slider">
-            <div class="service-item">
-                <img src="web development.jpg" alt="Web Development">
-                <h3>Web Development</h3>
-                <p>Building responsive and dynamic websites using HTML, CSS, and JavaScript.</p>
+          <p class="about-para">
+            My core expertise is in <strong>Java and Spring Boot</strong>, where I love architecting
+            RESTful APIs, optimizing database queries with SQL, and containerizing services with Docker.
+            I'm also comfortable in the frontend world with React.js.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <span class="info-label">Degree</span>
+                <span class="info-value">B.Tech in Computer Science</span>
+              </div>
             </div>
-            <div class="service-item">
-                <img src="Android App.png" alt="Android App Development">
-                <h3>Android App Developer</h3>
-                <p>Designing intuitive and user-friendly interfaces for web applications.</p>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="info-label">Location</span>
+                <span class="info-value">Gandhinagar, Gujarat</span>
+              </div>
             </div>
-            <div class="service-item">
-                <img src="backend.webp" alt="Backend Development">
-                <h3>Backend Optimization</h3>
-                <p>Optimizing frontend performance for faster load times and better user experience.</p>
+            <div class="info-item">
+              <i class="fas fa-briefcase"></i>
+              <div>
+                <span class="info-label">Role</span>
+                <span class="info-value">Software Developer</span>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-      <h2>Portfolio</h2>
-      <p>Here are some of my latest projects.</p>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="project1.jpg" alt="Project 1" />
-          <h3>Online Art Gallery</h3>
-          <p>An immersive online art gallery showcasing stunning digital and traditional artworks for art enthusiasts and collectors.</p>
-          <a href="#" class="btn">View Project</a>
-        </div>
-        <div class="portfolio-item">
-          <img src="project2.jpg" alt="Project 2" />
-          <h3>Project Two</h3>
-          <p>A scalable employee management system.</p>
-          <a href="#" class="btn">View Project</a>
-        </div>
-        <div class="portfolio-item">
-          <img src="project3.jpg" alt="Project 3" />
-          <h3>Project Three</h3>
-          <p>Real-time data analytics dashboard using Hadoop.</p>
-          <a href="#" class="btn">View Project</a>
+            <div class="info-item">
+              <i class="fas fa-code"></i>
+              <div>
+                <span class="info-label">Focus</span>
+                <span class="info-value">Backend Engineering</span>
+              </div>
+            </div>
+          </div>
+          <a href="CV.pdf" download class="btn-primary">
+            <i class="fas fa-file-alt"></i> Download Resume
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Blogs Section -->
-    <section id="blogs" class="blogs">
-      <h2>Blogs</h2>
-      <div class="blogs-content">
-        <p>Keep in touch, blogs are about to come! 🚀</p>
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="skills section-padding">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">// tech stack</span>
+        <h2 class="section-title">My Skills</h2>
       </div>
-    </section>
+      <div class="skills-categories">
+        <div class="skill-category" data-aos>
+          <h3 class="category-title"><i class="fas fa-code"></i> Languages</h3>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <i class="devicon-java-plain colored"></i>
+              <span>Java</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:85%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:45%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-c-plain colored"></i>
+              <span>C</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:60%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-javascript-plain colored"></i>
+              <span>JavaScript</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:55%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category" data-aos>
+          <h3 class="category-title"><i class="fas fa-layer-group"></i> Frameworks</h3>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <i class="devicon-spring-plain colored"></i>
+              <span>Spring Boot</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:70%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-react-original colored"></i>
+              <span>React.js</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:55%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-html5-plain colored"></i>
+              <span>HTML/CSS</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category" data-aos>
+          <h3 class="category-title"><i class="fas fa-database"></i> Databases & Tools</h3>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <i class="devicon-mysql-plain colored"></i>
+              <span>MySQL</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:72%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-docker-plain colored"></i>
+              <span>Docker</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:50%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-git-plain colored"></i>
+              <span>Git</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:78%"></div>
+              </div>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-github-original colored"></i>
+              <span>GitHub</span>
+              <div class="skill-bar-mini">
+                <div class="skill-fill" style="--w:78%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <h2>Contact Me</h2>
-      <form
-        id="contact-form"
-        action="mailto:your-email@example.com"
-        method="post"
-        enctype="text/plain"
-      >
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          required
-        />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Your Email"
-          required
-        />
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="services section-padding">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">// what I do</span>
+        <h2 class="section-title">Services</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos id="service-web">
+          <div class="service-icon-wrap">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>Building responsive, fast, and modern websites using HTML, CSS, JavaScript, and React.js with clean UI and
+            great user experience.</p>
+          <div class="service-tags">
+            <span>React</span><span>HTML/CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="service-card" data-aos id="service-backend">
+          <div class="service-icon-wrap">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Backend Development</h3>
+          <p>Architecting scalable RESTful APIs and microservices using Java and Spring Boot, with optimized SQL
+            databases and containerized deployments via Docker.</p>
+          <div class="service-tags">
+            <span>Java</span><span>Spring Boot</span><span>SQL</span><span>Docker</span>
+          </div>
+        </div>
+        <div class="service-card" data-aos id="service-android">
+          <div class="service-icon-wrap">
+            <i class="fab fa-android"></i>
+          </div>
+          <h3>Android App Development</h3>
+          <p>Designing and developing intuitive Android mobile applications with smooth user interfaces and solid
+            backend integrations.</p>
+          <div class="service-tags">
+            <span>Android</span><span>Java</span><span>Mobile UI</span>
+          </div>
+        </div>
+        <div class="service-card" data-aos id="service-api">
+          <div class="service-icon-wrap">
+            <i class="fas fa-plug"></i>
+          </div>
+          <h3>API Integration</h3>
+          <p>Designing RESTful API architectures, integrating third-party services, and ensuring secure, efficient data
+            communication between systems.</p>
+          <div class="service-tags">
+            <span>REST API</span><span>JSON</span><span>Spring Boot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2023 Satyam Mishra. All rights reserved.</p>
-    </footer>
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="portfolio" class="portfolio section-padding">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">// my work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-desc">Here are some of the projects I've built — each one solving a real problem.</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-aos id="project-art-gallery">
+          <div class="project-img-wrap">
+            <img src="project1.jpg" alt="Online Art Gallery Project" class="project-img" />
+            <div class="project-overlay">
+              <a href="https://online-art-gallery-5ud8zhem1-satyammishra44s-projects.vercel.app/" target="_blank"
+                class="overlay-btn" aria-label="Live Demo">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/SatyamMishra44" target="_blank" class="overlay-btn" aria-label="GitHub">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">React</span>
+              <span class="p-tag">Node.js</span>
+              <span class="p-tag">CSS</span>
+            </div>
+            <h3 class="project-title">Online Art Gallery</h3>
+            <p class="project-desc">An immersive online art gallery showcasing digital and traditional artworks for
+              collectors and enthusiasts, with a dynamic browsing experience and clean UI.</p>
+            <a href="https://online-art-gallery-5ud8zhem1-satyammishra44s-projects.vercel.app/" target="_blank"
+              class="project-link">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card" data-aos id="project-music-app">
+          <div class="project-img-wrap">
+            <img src="musicapp.png" alt="Sangeet Music App" class="project-img" />
+            <div class="project-overlay">
+              <a href="https://music-app-mishra.vercel.app/" target="_blank" class="overlay-btn" aria-label="Live Demo">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/SatyamMishra44" target="_blank" class="overlay-btn" aria-label="GitHub">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">React</span>
+              <span class="p-tag">JavaScript</span>
+              <span class="p-tag">Music API</span>
+            </div>
+            <h3 class="project-title">Sangeet — Music App</h3>
+            <p class="project-desc">A modern Spotify-inspired music streaming app built with React, featuring seamless
+              audio playback, playlist management, and an intuitive, responsive interface.</p>
+            <a href="https://music-app-mishra.vercel.app/" target="_blank" class="project-link">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card" data-aos id="project-fake-news">
+          <div class="project-img-wrap">
+            <img src="fakenews.png" alt="Fake News Detection" class="project-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/SatyamMishra44" target="_blank" class="overlay-btn" aria-label="GitHub">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">Python</span>
+              <span class="p-tag">LSTM</span>
+              <span class="p-tag">Machine Learning</span>
+            </div>
+            <h3 class="project-title">Fake News Detection</h3>
+            <p class="project-desc">An ML-powered fake news classifier using LSTM neural networks to analyze and
+              classify news articles as real or fake with high accuracy.</p>
+            <a href="https://github.com/SatyamMishra44" target="_blank" class="project-link">
+              View on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="project-card" data-aos id="project-qr-code">
+          <div class="project-img-wrap">
+            <img src="QRCode App.jpg" alt="QR Code Generator & Scanner Android App" class="project-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/SatyamMishra44/QR_Code_Application" target="_blank" class="overlay-btn"
+                aria-label="GitHub">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">Android</span>
+              <span class="p-tag">Java</span>
+              <span class="p-tag">ZXing</span>
+              <span class="p-tag">Mobile</span>
+            </div>
+            <h3 class="project-title">QR Code Generator & Scanner</h3>
+            <p class="project-desc">A feature-rich Android app to generate QR codes from any text or URL and scan
+              existing codes in real time using the device camera, with a clean and intuitive mobile UI.</p>
+            <a href="https://github.com/SatyamMishra44/QR_Code_Application" target="_blank" class="project-link">
+              View on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="projects-cta" data-aos>
+        <a href="https://github.com/SatyamMishra44" target="_blank" class="btn-outline" id="github-all-projects-btn">
+          <i class="fab fa-github"></i> View All Projects on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-  </body>
+  <!-- ===== CERTIFICATIONS SECTION ===== -->
+  <section id="certifications" class="certifications section-padding">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">// achievements</span>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-desc">Verified credentials from globally recognized platforms — click any card to verify.</p>
+      </div>
+      <div class="certs-grid">
+
+        <!-- 1. Oracle Cloud -->
+        <div class="cert-card cert-featured" data-aos id="cert-oracle">
+          <div class="cert-icon-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle"
+              class="cert-org-logo" />
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label featured">⭐ Featured</span>
+            <h3>OCI 2025 Certified Foundations Associate</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> Oracle</p>
+            <p class="cert-skills">Cloud Infrastructure · Compute · Storage · Networking · Security</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-calendar-alt"></i> Aug 2025</span>
+              <span class="cert-expiry"><i class="fas fa-clock"></i> Valid till Aug 2027</span>
+            </div>
+          </div>
+          <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=2F28A7482CCEB63FA67D0B8D71E73A0668753C58ED76E879FFEF4CCFFDA73DBC"
+            target="_blank" class="cert-verify-btn" aria-label="Verify Oracle Certificate">
+            <i class="fas fa-external-link-alt"></i> Verify
+          </a>
+        </div>
+
+        <!-- 2. HackerRank Software Engineer -->
+        <div class="cert-card" data-aos id="cert-swe">
+          <div class="cert-icon-wrap">
+            <i class="fas fa-laptop-code cert-fa-icon" style="color:#00ea64;"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label hackerrank">HackerRank</span>
+            <h3>Software Engineer</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> HackerRank</p>
+            <p class="cert-skills">Problem Solving · SQL · REST API · Data Structures</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-calendar-alt"></i> Dec 2025</span>
+              <span class="cert-date"><i class="fas fa-id-badge"></i> ID: b77edcd4e256</span>
+            </div>
+          </div>
+          <a href="https://www.hackerrank.com/certificates/b77edcd4e256" target="_blank" class="cert-verify-btn"
+            aria-label="Verify Software Engineer Certificate">
+            <i class="fas fa-external-link-alt"></i> Verify
+          </a>
+        </div>
+
+        <!-- 2b. HackerRank Java Basic -->
+        <div class="cert-card" data-aos id="cert-java-basic">
+          <div class="cert-icon-wrap">
+            <i class="devicon-java-plain colored cert-fa-icon"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label hackerrank">HackerRank</span>
+            <h3>Java (Basic)</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> HackerRank</p>
+            <p class="cert-skills">Java OOP · Classes · Data Structures · Exception Handling</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-id-badge"></i> Verified Skill</span>
+            </div>
+          </div>
+          <a href="https://www.hackerrank.com/certificates/" target="_blank" class="cert-verify-btn"
+            aria-label="View HackerRank Profile">
+            <i class="fas fa-external-link-alt"></i> View
+          </a>
+        </div>
+
+        <!-- 3. HackerRank SQL Intermediate -->
+        <div class="cert-card" data-aos id="cert-sql">
+          <div class="cert-icon-wrap">
+            <i class="devicon-mysql-plain colored cert-fa-icon"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label hackerrank">HackerRank</span>
+            <h3>SQL (Intermediate)</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> HackerRank</p>
+            <p class="cert-skills">Complex Joins · Unions · Sub-Queries · Aggregations</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-id-badge"></i> ID: 328103644cfc</span>
+            </div>
+          </div>
+          <a href="https://www.hackerrank.com/certificates/328103644cfc" target="_blank" class="cert-verify-btn"
+            aria-label="Verify SQL Certificate">
+            <i class="fas fa-external-link-alt"></i> Verify
+          </a>
+        </div>
+
+        <!-- 4. HackerRank Problem Solving -->
+        <div class="cert-card" data-aos id="cert-ps">
+          <div class="cert-icon-wrap">
+            <i class="fas fa-puzzle-piece cert-fa-icon" style="color:#00ea64;"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label hackerrank">HackerRank</span>
+            <h3>Problem Solving (Basic)</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> HackerRank</p>
+            <p class="cert-skills">Arrays · Strings · Sorting · Searching · Algorithms</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-id-badge"></i> ID: 0e2006a9ae83</span>
+            </div>
+          </div>
+          <a href="https://www.hackerrank.com/certificates/0e2006a9ae83" target="_blank" class="cert-verify-btn"
+            aria-label="Verify Problem Solving Certificate">
+            <i class="fas fa-external-link-alt"></i> Verify
+          </a>
+        </div>
+
+        <!-- 5. Simplilearn Docker -->
+        <div class="cert-card" data-aos id="cert-docker">
+          <div class="cert-icon-wrap">
+            <i class="devicon-docker-plain colored cert-fa-icon"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label simplilearn">Simplilearn</span>
+            <h3>Getting Started with Docker</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> Simplilearn SkillUp</p>
+            <p class="cert-skills">Docker · Containerization · Images · Volumes · Networking</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-id-badge"></i> ID: 7918958</span>
+            </div>
+          </div>
+          <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzQxIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzkxODk1OF84MjQ2OTI2MTczOTgwNDU1NzU2NS5wbmciLCJ1c2VybmFtZSI6IlNhdHlhbSBLdW1hciBNaXNocmEifQ%3D%3D"
+            target="_blank" class="cert-verify-btn" aria-label="Verify Docker Certificate">
+            <i class="fas fa-external-link-alt"></i> Verify
+          </a>
+        </div>
+
+        <!-- 6. Anthropic Claude 101 -->
+        <div class="cert-card" data-aos id="cert-claude101">
+          <div class="cert-icon-wrap">
+            <i class="fas fa-robot cert-fa-icon" style="color:#c96442;"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label anthropic">Anthropic</span>
+            <h3>Claude 101</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> Anthropic Education</p>
+            <p class="cert-skills">AI Fundamentals · Prompt Engineering · Claude AI · LLM Usage</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-calendar-alt"></i> Jun 2026</span>
+            </div>
+          </div>
+          <a href="https://verify.skilljar.com/c/ktgyvqxh9a95" target="_blank" class="cert-verify-btn"
+            aria-label="Verify Claude 101 Certificate">
+            <i class="fas fa-external-link-alt"></i> Verify
+          </a>
+        </div>
+
+        <!-- 7. Anthropic Claude Code in Action -->
+        <div class="cert-card" data-aos id="cert-claude-code">
+          <div class="cert-icon-wrap">
+            <i class="fas fa-terminal cert-fa-icon" style="color:#c96442;"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-badge-label anthropic">Anthropic</span>
+            <h3>Claude Code in Action</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> Anthropic Education</p>
+            <p class="cert-skills">Claude Code CLI · AI-Driven Development · Agentic Coding</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-calendar-alt"></i> Apr 2026</span>
+            </div>
+          </div>
+          <a href="https://verify.skilljar.com/c/6ayts6br6sv2" target="_blank" class="cert-verify-btn"
+            aria-label="Verify Claude Code Certificate">
+            <i class="fas fa-external-link-alt"></i> Verify
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact section-padding">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">// get in touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-desc">Have a project in mind or just want to say hi? My inbox is always open!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:satyammishra0323@gmail.com">satyammishra0323@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-linkedin-in"></i>
+            <div>
+              <h4>LinkedIn</h4>
+              <a href="https://www.linkedin.com/in/satyam-mishra-140688298/"
+                target="_blank">linkedin.com/in/satyam-mishra</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-github"></i>
+            <div>
+              <h4>GitHub</h4>
+              <a href="https://github.com/SatyamMishra44" target="_blank">github.com/SatyamMishra44</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Location</h4>
+              <span>Gandhinagar, Gujarat, India</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" data-aos>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Satyam Mishra" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="hello@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project or just say hi!"
+              required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="submit-contact-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">© 2026 Satyam Kumar Mishra. Crafted with <span class="heart">❤️</span> & lots of ☕</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/satyam-mishra-140688298/" target="_blank" aria-label="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/SatyamMishra44" target="_blank" aria-label="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="mailto:satyammishra0323@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
